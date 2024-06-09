@@ -1,4 +1,4 @@
-package HW.chapter01;
+package HW.chapter01.chapter01;
 
 public class Q01 {
     public static void main(String[] args) {
