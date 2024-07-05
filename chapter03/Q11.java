@@ -14,39 +14,21 @@ public class Q11 {
 
         int daysInMonth;
 
-        if (isLeapYear) {
-            daysInMonth = switch (month) {
-                case 1 -> 31;
-                case 2 -> 29;
-                case 3 -> 31;
-                case 4 -> 30;
-                case 5 -> 31;
-                case 6 -> 30;
-                case 7 -> 31;
-                case 8 -> 31;
-                case 9 -> 30;
-                case 10 -> 31;
-                case 11 -> 30;
-                case 12 -> 31;
-                default -> throw new IllegalStateException("Unexpected value: " + month);
-            };
-        } else {
-            daysInMonth = switch (month) {
-                case 1 -> 31;
-                case 2 -> 28;
-                case 3 -> 31;
-                case 4 -> 30;
-                case 5 -> 31;
-                case 6 -> 30;
-                case 7 -> 31;
-                case 8 -> 31;
-                case 9 -> 30;
-                case 10 -> 31;
-                case 11 -> 30;
-                case 12 -> 31;
-                default -> throw new IllegalStateException("Unexpected value: " + month);
-            };
-        }
+        daysInMonth = switch (month) {
+            case 1 -> 31;
+            case 2 -> (isLeapYear) ? 29 : 28;
+            case 3 -> 31;
+            case 4 -> 30;
+            case 5 -> 31;
+            case 6 -> 30;
+            case 7 -> 31;
+            case 8 -> 31;
+            case 9 -> 30;
+            case 10 -> 31;
+            case 11 -> 30;
+            case 12 -> 31;
+            default -> throw new IllegalStateException("Unexpected value: " + month);
+        };
 
         System.out.println("Number of days in the month is: " + daysInMonth);
     }
